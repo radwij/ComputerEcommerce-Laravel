@@ -24,5 +24,8 @@ class Registered
     public function __construct($user)
     {
         $this->user = $user;
+
+        $user = \App\Models\User::find($user->id);
+        $user -> assignRole('buyer');
     }
 }
