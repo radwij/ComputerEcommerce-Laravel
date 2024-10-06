@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    // Everything but id is inputted by user and allowed to be sent to database
+    protected $guarded = [
+        'id',
+    ];
 }
