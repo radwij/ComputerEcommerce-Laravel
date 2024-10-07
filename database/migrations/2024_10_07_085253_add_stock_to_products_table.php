@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             // adding teh stock column to the products table
-            $table->integer('stock')->default(0);
+            $table->unsignedBigInteger('stock')->default(0);
         });
     }
 
