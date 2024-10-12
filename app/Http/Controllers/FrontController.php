@@ -16,4 +16,11 @@ class FrontController extends Controller
             'categories' => $categories,
         ]);
     }
+
+    public function details(Product $product) {
+        // dd($product);
+        return(view('front.details', [
+            'product' => $product
+        ]));
+    }
 }

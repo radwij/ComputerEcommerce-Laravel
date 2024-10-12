@@ -50,59 +50,26 @@
         <main>
           <div class="py-12">
             <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
-
               <h3 class="text-xl font-bold text-black">
-                All Categories
-              </h3>
-                <div class="bg-white flex flex-wrap gap-5 overflow-hidden p-10 shadow-sm sm:rounded-lg">
-      
-                  @forelse ($categories as $category)
-                    <div class="item-card flex flex-col items-center justify-between w-full sm:w-[45%] md:w-[30%] lg:w-[22%]">
-                      <div class="flex flex-col gap-y-3 items-center text-center">
-                        <img src="{{ Storage::url($category->icon) }}" alt="" class="w-[50px] h-[50px]">
-                        <h3 class="text-2xl font-bold text-black">
-                          {{ $category->name }}
-                        </h3>
-                      </div>
-
-                    </div>
-                    
-                  @empty
-                    
-                  @endforelse
-                </div>
-            </div>
-        </div>
-
-
-          <div class="py-12">
-            <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
-              <h3 class="text-xl font-bold text-black">
-                All Products
+                This Product
               </h3>
                 <div class="bg-white flex flex-col gap-y-5 ovessrflow-hidden p-10 shadow-sm sm:rounded-lg">
-      
-                  @forelse ($products as $product)
-                    <div class="item-card flex flex-row items-center justify-between">
-                      <div class="flex flex-row gap-x-5 items-center">
-                        <img src="{{ Storage::url($product->photo) }}" alt="" class="w-[90px] h-[90px]">
-                        <div class="flex flex-col gap-x-3 justify-start">
-                          <h3 class="text-2xl font-bold text-black">
-                            {{ $product->name }}
-                          </h3>
-                          <p class="text-base text-slate-500">Category: {{ $product->category->name }}</p>
-                          <p class="text-base text-slate-500">Price: Rp.{{ $product->price }}</p>
-                          <p class="text-base text-slate-500">In stock: {{ $product->stock }}</p>
-                        </div>
-                      </div>
-                      <div class="flex flex-row items-center gap-x-5">
-                        <a href="{{ route('front.product.details', $product->slug) }}" class="bg-blue-600 py-2 px-5 rounded-xl font-bold text-white">View Details</a>
+                  <div class="item-card flex flex-row items-center justify-between">
+                    <div class="flex flex-row gap-x-5 items-center">
+                      <img src="{{ Storage::url($product->photo) }}" alt="" class="w-[90px] h-[90px]">
+                      <div class="flex flex-col gap-x-3 justify-start">
+                        <h3 class="text-2xl font-bold text-black">
+                          {{ $product->name }}
+                        </h3>
+                        <p class="text-base text-slate-500">Category: {{ $product->category->name }}</p>
+                        <p class="text-base text-slate-500">Price: Rp.{{ $product->price }}</p>
+                        <p class="text-base text-slate-500">In stock: {{ $product->stock }}</p>
                       </div>
                     </div>
-                    
-                  @empty
-                    <p>Belum ada Produk.</p>
-                  @endforelse
+                    <div class="flex flex-row items-center gap-x-5">
+                      <a href="#" class="bg-blue-600 py-2 px-5 rounded-xl font-bold text-white">Add To Cart</a>
+                    </div>
+                  </div>
                 </div>
             </div>
           </div>

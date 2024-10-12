@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
+Route::get('/details/{product:slug}', [FrontController::class, 'details'])->name('front.product.details');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
