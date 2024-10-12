@@ -12,7 +12,7 @@ class ProductTransactionController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.product_transactions.index');
     }
 
     /**
@@ -36,7 +36,7 @@ class ProductTransactionController extends Controller
      */
     public function show(ProductTransaction $productTransaction)
     {
-        //
+        return view('admin.product_transactions.details');
     }
 
     /**
