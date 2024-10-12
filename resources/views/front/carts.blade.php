@@ -51,29 +51,28 @@
           <div class="py-12">
             <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
               <h3 class="text-xl font-bold text-black">
-                This Product
+                My Carts
               </h3>
                 <div class="bg-white flex flex-col gap-y-5 ovessrflow-hidden p-10 shadow-sm sm:rounded-lg">
-                  <div class="item-card flex flex-row items-center justify-between">
-                    <div class="flex flex-row gap-x-5 items-center">
-                      <img src="{{ Storage::url($product->photo) }}" alt="" class="w-[90px] h-[90px]">
-                      <div class="flex flex-col gap-x-3 justify-start">
-                        <h3 class="text-2xl font-bold text-black">
-                          {{ $product->name }}
-                        </h3>
-                        <p class="text-base text-slate-500">Category: {{ $product->category->name }}</p>
-                        <p class="text-base text-slate-500">Price: Rp.{{ $product->price }}</p>
-                        <p class="text-base text-slate-500">In stock: {{ $product->stock }}</p>
-                        <p class="text-base text-slate-500">About: {{ $product->about }}</p>
+      
+                  @forelse ($my_carts as $cart)
+                    <div class="item-card flex flex-row items-center justify-between">
+                      <div class="flex flex-row gap-x-5 items-center">
+                        <img src="{{ Storage::url($cart->product->photo) }}" alt="" class="w-[90px] h-[90px]">
+                        <div class="flex flex-col gap-x-3 justify-start">
+                          <h3 class="text-2xl font-bold text-black">
+                            {{ $cart->product->name }}
+                          </h3>
+                          <p class="text-base text-slate-500">Category: {{ $cart->product->category->name }}</p>
+                          <p class="text-base text-slate-500">Price: Rp.{{ $cart->product->price }}</p>
+                          <p class="text-base text-slate-500">In stock: {{ $cart->product->stock }}</p>
+                        </div>
                       </div>
                     </div>
-
-                    <form method="POST" action="{{ route('carts.store', $product->id) }}">
-                      @csrf
-                      <button type="submit" class="bg-blue-600 py-2 px-5 rounded-xl font-bold text-white">Add to Cart</button>
-                    </form>
-
-                  </div>
+                    
+                  @empty
+                    <p>Belum ada Produk.</p>
+                  @endforelse
                 </div>
             </div>
           </div>
