@@ -22,7 +22,7 @@
                     <p class="text-base text-slate-500">In stock: {{ $product->stock }}</p>
                   </div>
                 </div>
-                <div class="flex flex0row items-center gap-x-5">
+                <div class="flex flex-row items-center gap-x-5">
                   <a href="{{ route('admin.products.edit', $product) }}" class="bg-yellow-400 py-2 px-5 rounded-xl font-bold text-white">Edit</a>
 
                   @if ($errors->any())
