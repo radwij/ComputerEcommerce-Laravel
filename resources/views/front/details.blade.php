@@ -64,6 +64,7 @@
                         <p class="text-base text-slate-500">Category: {{ $product->category->name }}</p>
                         <p class="text-base text-slate-500">Price: Rp.{{ $product->price }}</p>
                         <p class="text-base text-slate-500">In stock: {{ $product->stock }}</p>
+                        <p class="text-base text-slate-500">About: {{ $product->about }}</p>
                       </div>
                     </div>
                     <div class="flex flex-row items-center gap-x-5">
