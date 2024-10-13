@@ -39,15 +39,18 @@
             @endif
         </header>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h2 class="font-bold">Welcome To the Shop</h2>
-                </div>
-            </div>
-        </div>
-
         <main>
+          <div class="py-12">
+            <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+              <h3 class="text-xl font-bold text-black">
+                My Carts
+              </h3>
+              <div class="bg-white flex flex-col gap-y-5 ovessrflow-hidden p-10 shadow-sm sm:rounded-lg">
+                <a href="{{ route('carts.index') }}" class="bg-green-500 py-2 px-5 rounded-xl font-bold text-white">View Cart</a>
+              </div>
+            </div>
+          </div>
+
           <div class="py-12">
             <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
 

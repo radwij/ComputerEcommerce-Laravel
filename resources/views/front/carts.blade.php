@@ -39,14 +39,6 @@
             @endif
         </header>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h2 class="font-bold">Welcome To the Shop</h2>
-                </div>
-            </div>
-        </div>
-
         <main>
           <div class="py-12">
             <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
@@ -68,8 +60,12 @@
                           <p class="text-base text-slate-500">In stock: {{ $cart->product->stock }}</p>
                         </div>
                       </div>
+                      <form method="POST" action="{{ route('carts.destroy', $cart) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="bg-red-600 py-2 px-5 rounded-xl font-bold text-white">Delete</button>
+                      </form>
                     </div>
-                    
                   @empty
                     <p>Belum ada Produk.</p>
                   @endforelse
