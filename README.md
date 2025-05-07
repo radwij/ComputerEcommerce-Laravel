@@ -1,5 +1,7 @@
 ### E-Commerece Computer Shop
 
+Website made for online selling. Made entirely using Laravel.
+
 - #### Working Admin Content Management System
   
   ##### Transaction Mangement
