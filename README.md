@@ -1,4 +1,4 @@
-### E-Commerece Computer Shop
+### E-Commerce Computer Shop
 
 Website made for online selling. Made entirely using Laravel.
 
